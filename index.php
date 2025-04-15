@@ -6,7 +6,7 @@ include 'header.php';
     <?php
     $conn = mysqli_connect("localhost", "root", "", "crud") or die("Connection failed: ");
 
-    $sql = "SELECT * FROM student JOIN studentclass WHERE student.sid = studentclass.cid";
+    $sql = "SELECT * FROM student JOIN studentclass ON student.sclass = studentclass.cid";
     $result = mysqli_query($conn, $sql) or die("Query failed: ");
 
     if (mysqli_num_rows($result) > 0) {
