@@ -3,15 +3,15 @@
 <div id="main-content">
     <h2>Update Record</h2>
     <?php
-    $conn = mysqli_connect("localhost", "root", "", "crud") or die("Connection failed: ");
+        $conn = mysqli_connect("localhost", "root", "", "crud") or die("Connection failed: ");
 
-    $stu_id = $_GET['id'];
-    $sql = "SELECT * FROM student WHERE sid = {$stu_id}";
-    $result = mysqli_query($conn, $sql) or die("Query failed: ");
+        $stu_id = $_GET['id'];
+        $sql = "SELECT * FROM student WHERE sid = {$stu_id}";
+        $result = mysqli_query($conn, $sql) or die("Query failed: ");
 
-    if (mysqli_num_rows($result) > 0) {
+        if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-    ?>
+        ?>
 
             <form class="post-form" action="updatedata.php" method="post">
                 <div class="form-group">
